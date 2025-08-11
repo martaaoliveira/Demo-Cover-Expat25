@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Early Warning System for Remote Sensing of Wildfires – Demo Poster</title>
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f0f2f5;
+    }
+    .poster {
+        width: 210mm;
+        max-width: 97vw;
+        height: auto;
+        min-height: 297mm;
+        margin: 0 auto;
+        background: #fff;
+        display: grid;
+        grid-template-rows: auto auto 1fr; /* dynamic heights, no fixed gap */
+        gap: 0;
+        border-radius: 14px;
+        box-shadow: 0 6px 30px rgba(44,95,115,0.12);
+    }
+    .header {
+        background: #286991;
+        color: #fff;
+        text-align: center;
+        padding: 20px 22px 14px 22px;
+        border-radius: 14px 14px 0 0;
+        box-shadow: 0 2px 10px rgba(44,95,115,0.07);
+    }
+    .header h1 {
+        margin: 0;
+        font-size: 32px;
+        font-weight: 900;
+        letter-spacing: -1.5px;
+    }
+    .header p {
+        margin: 6px 0 0 0;
+        font-size: 16px;
+    }
+    .accent {
+        height: 5px;
+        background: #2c5f73;
+        width: 100%;
+    }
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: 1fr;
+        border-top: 1px solid #ebeefa;
+        margin-bottom: 8px;
+    }
+    .grid:first-of-type {
+        margin-top: 0; /* ensure no gap after header */
+    }
+    .section {
+        background: #f9fafc;
+        border-radius: 8px;
+        margin: 10px 9px 8px 9px;
+        padding: 17px 16px;
+        box-shadow: 0px 2px 14px rgba(44,95,115,0.07);
+        display: flex;
+        flex-direction: column;
+    }
+    .section:nth-child(2n) {
+        background: #eef4fa;
+    }
+    h2 {
+        margin: 0 0 10px 0;
+        font-size: 22px;
+        color: #286991;
+        font-weight: 800;
+    }
+    p, li {
+        font-size: 16px;
+        line-height: 1.55;
+        margin: 6px 0;
+    }
+    ul {
+        margin: 6px 0 0 22px;
+        padding: 0;
+    }
+    img.screenshot, img.arch-diagram {
+        width: 100%;
+        max-width: 100%;
+        max-height: 360px;
+        border: 1.5px solid #aaa;
+        border-radius: 6px;
+        margin-top: 9px;
+        box-shadow: 0px 2px 8px rgba(0,0,0,0.11);
+        object-fit: contain;
+    }
+    .overview-row {
+        display: flex;
+        align-items: flex-start;
+    }
+    .logo {
+        max-height: 80px;
+        width: auto;
+        margin-right: 26px;
+        border-radius: 7px;
+        border: 2px solid #286991;
+        box-shadow: 0 2px 8px rgba(44,95,115,0.10);
+    }
+    table.perf-table {
+        width: 96%;
+        margin: 12px 0 0 0;
+        border-collapse: collapse;
+        font-size: 16px;
+        box-shadow: 0px 2px 8px rgba(44,95,115,0.09);
+    }
+    table.perf-table th {
+        background: #286991;
+        color: #fff;
+        padding: 6px 9px;
+        font-size: 17px;
+        text-align: left;
+        border-bottom: 2.5px solid #284657;
+    }
+    table.perf-table td {
+        background: #f8fafb;
+        color: #222;
+        padding: 6px 9px;
+        border-bottom: 1px solid #d0d8e0;
+    }
+    table.perf-table tr:last-child td {
+        border-bottom: none;
+    }
+    em {
+        color: #264b5b;
+    }
+    a.project-link {
+        display: inline-block;
+        margin-top: 10px;
+        font-size: 16px;
+        color: #286991;
+        text-decoration: none;
+        border-bottom: 1.5px solid #286991;
+        transition: color 0.3s, border-color 0.3s;
+    }
+    a.project-link:hover {
+        color: #1f4a5a;
+        border-color: #1f4a5a;
+    }
+    @media screen and (max-width:700px) {
+        .poster {
+            width: 99vw;
+            min-width: 0;
+            grid-template-rows: auto;
+        }
+        .grid {
+            grid-template-columns: 1fr;
+        }
+        .section {
+            margin: 6px 5px;
+        }
+        a.project-link {
+            font-size: 14px;
+        }
+    }
+</style>
+</head>
+<body>
+<div class="poster">
+    <div class="header">
+        <h1>Early Warning System for Remote Sensing of Wildfires – Demo</h1>
+        <p>Marta Oliveira, Luís Malarmey, Pedro Casau, Paulo Pedreiras, João Barraca, Pedro Fonseca (Universidade de Aveiro, PT)<br>
+        Sandra Millán Arias, Cristina Montesinos Barrios (CICYTEX, ES)</p>
+    </div>
+    <div class="accent"></div>
+
+    <!-- Row 1 -->
+    <div class="grid">
+        <div class="section">
+            <h2>Project Overview</h2>
+            <div class="overview-row">
+                <img src="logo.png" alt="Project Logo" class="logo">
+                <div>
+                    <p>RAT EOS PC delivers a low-cost IoT platform that <strong>detects fire-risk conditions in real-time:</strong></p>
+                    <ul>
+                        <li>Deployment of 34 LoRaWAN gateways</li>
+                        <li>200 multisensor nodes to capture temperature, humidity, wind & CO₂ among other fields</li>
+                        <li>Open-source stack technologies</li>
+                        <li>Funded by EU Interreg POCTEP 2021-2027 | Contact: marta.alex@ua.pt</p></li>
+                        <li> <a href="https://www.rateospc.pt/">www.rateospc.pt</a></p></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <h2>System Architecture</h2>
+            <ul>
+                <li><strong>Topology</strong>: Sensors → gateways → LoraWan servers → Mosquitto broker</li>
+                <li><strong>Kafka</strong> buffers data</li>
+                <li><strong>Logstash</strong> normalises according to FIWARE smart-data models.</li>
+                <li><strong>Elasticsearch + Kibana</strong> power dashboards & maps.</li>
+                <li><strong>N8N/ElastAlert</strong> push Slack / e-mail warnings & fire flags.</li>
+            </ul>
+            <img src="arch-2.png" alt="System Architecture Diagram" class="arch-diagram">
+        </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="grid">
+        <div class="section">
+            <h2>Alerting Workflow</h2>
+            <ul>
+                <li>Rules match in ElastAlert or N8N framework.</li>
+                <li>Alert context enriched (geo, sensor model).</li>
+                <li>Stakeholders notified in Slack & e-mail & Kibana Dashboards</li>
+            </ul>
+            <img src="alert.png" alt="Slack fire-alert screenshot" class="screenshot">
+        </div>
+        <div class="section">
+            <h2>Performance Highlights</h2>
+            <table class="perf-table">
+                <tr>
+                    <th>Metric</th>
+                    <th>Value</th>
+                </tr>
+                <tr><td>Messages processed (24h)</td><td>273,391</td></tr>
+                <tr><td>Kafka lag (95th percentile)</td><td>≤5 msgs</td></tr>
+                <tr><td>Index latency</td><td>0.14 ms</td></tr>
+                <tr><td>Search latency</td><td>&lt;30 ms</td></tr>
+                <tr><td>Peak burst (messages/time)</td><td>7,196 msgs / 21s</td></tr>
+                <tr><td>Burst stabilisation time</td><td>&lt;1s</td></tr>
+                <tr><td>Alert delivery (N8N, NFPA SLA)</td><td>100% within 40s</td></tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- Row 3 -->
+    <div class="grid">
+        <div class="section" style="grid-column: span 2;">
+            <h2>Contributions and Future Work</h2>
+            <ul>
+                <li><strong>Scalable real-time wildfire monitoring</strong> for Mediterranean forests.</li>
+                <li>Entirely open-source and replicable in other regions.</li>
+                <li>Meets emergency-response latency standards.</li>
+                <li>Next Work: integrate satellite hotspots & drone imagery for multi-modal early warning.</li>
+            </ul>
+            <img src="dashboard.png" alt="Kibana Dashboard Screenshot" class="screenshot" style="max-height: 280px; margin-top: 15px;">
+        </div>
+    </div>
+</div>
+</body>
+</html>
