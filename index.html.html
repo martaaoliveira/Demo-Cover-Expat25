@@ -83,6 +83,19 @@
         margin: 6px 0 0 22px;
         padding: 0;
     }
+    img.arch-diagram {
+    max-height: 500px;
+    width: auto;        /* change from 100% to auto */
+    max-width: 100%;
+    margin-top: 20px;
+    border: 1.5px solid #aaa;
+    border-radius: 6px;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.11);
+    object-fit: contain;
+    display: block;
+    }
+
+
     img.screenshot, img.arch-diagram {
         width: 100%;
         max-width: 100%;
@@ -184,7 +197,7 @@
                         <li>Deployment of 34 LoRaWAN gateways</li>
                         <li>200 multisensor nodes to capture temperature, humidity, wind & CO₂ among other fields</li>
                         <li>Open-source stack technologies</li>
-                        <li>Funded by EU Interreg POCTEP 2021-2027 | Contact: marta.alex@ua.pt</p></li>
+                        <li>Funded by EU Interreg POCTEP 2021-2027</li>
                         <li> <a href="https://www.rateospc.pt/">www.rateospc.pt</a></p></li>
                     </ul>
                 </div>
@@ -212,7 +225,7 @@
                 <li>Alert context enriched (geo, sensor model).</li>
                 <li>Stakeholders notified in Slack & e-mail & Kibana Dashboards</li>
             </ul>
-            <img src="alert.png" alt="Slack fire-alert screenshot" class="screenshot">
+            <img src="alert.png" alt="Slack fire-alert screenshot" class="screenshot" style="max-height: 300px; margin-top: 20px;">
         </div>
         <div class="section">
             <h2>Performance Highlights</h2>
@@ -221,13 +234,11 @@
                     <th>Metric</th>
                     <th>Value</th>
                 </tr>
+                <tr><td>Peak burst (messages/time)</td><td>7,196 msgs / 21s</td></tr>
                 <tr><td>Messages processed (24h)</td><td>273,391</td></tr>
-                <tr><td>Kafka lag (95th percentile)</td><td>≤5 msgs</td></tr>
                 <tr><td>Index latency</td><td>0.14 ms</td></tr>
                 <tr><td>Search latency</td><td>&lt;30 ms</td></tr>
-                <tr><td>Peak burst (messages/time)</td><td>7,196 msgs / 21s</td></tr>
-                <tr><td>Burst stabilisation time</td><td>&lt;1s</td></tr>
-                <tr><td>Alert delivery (N8N, NFPA SLA)</td><td>100% within 40s</td></tr>
+                <tr><td>Alert delivery (N8N, NFPA SLA)</td><td>100% within 100s</td></tr>
             </table>
         </div>
     </div>
@@ -241,6 +252,7 @@
                 <li>Entirely open-source and replicable in other regions.</li>
                 <li>Meets emergency-response latency standards.</li>
                 <li>Next Work: integrate satellite hotspots & drone imagery for multi-modal early warning.</li>
+                <li>Contact: marta.alex@ua.pt </li>
             </ul>
             <img src="dashboard.png" alt="Kibana Dashboard Screenshot" class="screenshot" style="max-height: 280px; margin-top: 15px;">
         </div>
