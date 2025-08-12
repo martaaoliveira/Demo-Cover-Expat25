@@ -5,172 +5,191 @@
 <title>Early Warning System for Remote Sensing of Wildfires – Demo Poster</title>
 <style>
     body {
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: 'Arial', 'Helvetica', sans-serif;
         margin: 0;
-        padding: 0;
+        padding: 20px 0;
         background: #f0f2f5;
+        color: #333;
     }
     .poster {
         width: 210mm;
         max-width: 97vw;
-        height: auto;
-        min-height: 297mm;
         margin: 20px auto;
         background: #fff;
-        display: grid;
-        grid-template-rows: auto auto 1fr;
-        gap: 0;
-        border-radius: 14px;
-        box-shadow: 0 6px 30px rgba(44,95,115,0.12);
+        display: flex;
+        flex-direction: column;
+        border-radius: 16px;
+        box-shadow: 0 10px 40px rgba(44, 95, 115, 0.15);
+        border: 1px solid #e0e5ea;
     }
     .header {
         background: #286991;
         color: #fff;
         text-align: center;
-        padding: 20px 22px 14px 22px;
+        padding: 25px 22px 20px 22px;
         border-radius: 14px 14px 0 0;
-        box-shadow: 0 2px 10px rgba(44,95,115,0.07);
     }
     .header h1 {
         margin: 0;
-        font-size: 32px;
+        font-size: 34px;
         font-weight: 900;
-        letter-spacing: -1.5px;
+        letter-spacing: -1.2px;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     }
     .header p {
-        margin: 6px 0 0 0;
-        font-size: 16px;
+        margin: 8px 0 0 0;
+        font-size: 15px;
+        opacity: 0.9;
     }
     .accent {
-        height: 5px;
-        background: #2c5f73;
+        height: 6px;
+        background: linear-gradient(90deg, #286991, #3c88b8);
         width: 100%;
     }
     .grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-auto-rows: auto; /* Changed from 1fr to auto */
-        border-top: 1px solid #ebeefa;
-        margin-bottom: 8px;
-    }
-    .grid:first-of-type {
-        margin-top: 0;
+        gap: 12px;
+        padding: 12px;
     }
     .section {
         background: #f9fafc;
-        border-radius: 8px;
-        margin: 10px 9px 8px 9px;
-        padding: 17px 16px;
-        box-shadow: 0px 2px 14px rgba(44,95,115,0.07);
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0px 4px 16px rgba(44, 95, 115, 0.08);
         display: flex;
         flex-direction: column;
+        border: 1px solid #e8eef3;
     }
     .section:nth-child(2n) {
         background: #eef4fa;
     }
     h2 {
-        margin: 0 0 10px 0;
-        font-size: 22px;
+        margin: 0 0 15px 0;
+        font-size: 24px;
         color: #286991;
         font-weight: 800;
+        padding-bottom: 8px;
+        border-bottom: 3px solid #3c88b8;
     }
     p, li {
         font-size: 16px;
-        line-height: 1.55;
-        margin: 6px 0;
+        line-height: 1.6;
+        margin: 8px 0;
     }
     ul {
-        margin: 6px 0 0 22px;
+        list-style: none;
         padding: 0;
+        margin: 10px 0;
     }
-    img.arch-diagram {
-        max-height: 500px;
-        width: auto;
+    ul li {
+        padding-left: 28px;
+        position: relative;
+    }
+    ul li::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 5px;
+        width: 18px;
+        height: 18px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23286991'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    ol {
+        padding-left: 25px;
+    }
+    img.arch-diagram, img.screenshot {
+        width: 100%;
         max-width: 100%;
-        margin-top: auto; /* Push to bottom */
-        border: 1.5px solid #aaa;
-        border-radius: 6px;
-        box-shadow: 0px 2px 8px rgba(0,0,0,0.11);
+        margin-top: auto;
+        border: 1.5px solid #ccc;
+        border-radius: 8px;
+        box-shadow: 0px 4px 12px rgba(0,0,0,0.12);
         object-fit: contain;
         display: block;
     }
+    img.arch-diagram {
+        max-height: 520px; /* Changed: Enlarged diagram */
+    }
     img.screenshot {
-        width: 100%;
-        max-width: 100%;
-        max-height: 360px;
-        border: 1.5px solid #aaa;
-        border-radius: 6px;
-        margin-top: 9px;
-        box-shadow: 0px 2px 8px rgba(0,0,0,0.11);
-        object-fit: contain;
+        max-height: 320px;
     }
     .overview-content {
-        flex-grow: 1; /* Allow text to take available space */
+        flex-grow: 1;
     }
     .logo {
-        max-height: 100px;
-        width: 100px;
-        border-radius: 9px;
-        border: 2px solid #286991;
-        box-shadow: 0 2px 8px rgba(44,95,115,0.10);
-        /* Style adjustments are now inline */
+        max-height: 140px;
+        width: 140px;
+        margin: 20px auto 0;
+        border-radius: 12px;
+        border: 3px solid #286991;
+        box-shadow: 0 4px 12px rgba(44,95,115,0.15);
+        display: block;
     }
     table.perf-table {
-        width: 96%;
-        margin: 12px 0 0 0;
+        width: 100%;
+        margin-top: 15px;
         border-collapse: collapse;
         font-size: 16px;
-        box-shadow: 0px 2px 8px rgba(44,95,115,0.09);
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0px 4px 12px rgba(44,95,115,0.1);
     }
     table.perf-table th {
         background: #286991;
         color: #fff;
-        padding: 6px 9px;
+        padding: 10px 12px;
         font-size: 17px;
         text-align: left;
-        border-bottom: 2.5px solid #284657;
     }
     table.perf-table td {
-        background: #f8fafb;
-        color: #222;
-        padding: 6px 9px;
-        border-bottom: 1px solid #d0d8e0;
+        background: #fff;
+        color: #333;
+        padding: 10px 12px;
+        border-bottom: 1px solid #e0e8ef;
     }
     table.perf-table tr:last-child td {
         border-bottom: none;
     }
-    em {
-        color: #264b5b;
-    }
     a.project-link {
-        display: inline-block;
-        margin-top: 10px;
-        font-size: 16px;
-        color: #286991;
-        text-decoration: none;
-        border-bottom: 1.5px solid #286991;
-        transition: color 0.3s, border-color 0.3s;
+        color: #286991; /* Changed: Reverted to text link style */
+        text-decoration: underline;
+        background-color: transparent;
+        padding: 0;
     }
     a.project-link:hover {
         color: #1f4a5a;
-        border-color: #1f4a5a;
+    }
+    .footer {
+        text-align: center;
+        padding: 15px;
+        background: #eef4fa;
+        border-top: 1px solid #e0e5ea;
+        border-radius: 0 0 14px 14px;
+        margin-top: auto;
+    }
+    .footer p {
+        margin: 0;
+        font-size: 16px;
+        color: #264b5b;
     }
     @media screen and (max-width:700px) {
+        body { padding: 5px 0; }
         .poster {
-            width: 99vw;
-            min-width: 0;
-            grid-template-rows: auto;
-            margin: 5px auto;
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
+            border-radius: 0;
+            border: none;
         }
         .grid {
             grid-template-columns: 1fr;
         }
-        .section {
-            margin: 6px 5px;
-        }
-        a.project-link {
-            font-size: 14px;
-        }
+        .header h1 { font-size: 28px; }
+        .header p { font-size: 14px; }
+        h2 { font-size: 22px; }
     }
 </style>
 </head>
@@ -178,14 +197,13 @@
 <div class="poster">
     <div class="header">
         <h1>Early Warning System for Remote Sensing of Wildfires – Demo</h1>
-        <p>Marta Oliveira, Luís Malarmey, Pedro Casau, Paulo Pedreiras, João Barraca, Pedro Fonseca (Universidade de Aveiro, PT)<br>
+        <p>Marta Oliveira, Luís Malarmey, Pedro Casau, Paulo Pedreiras, João Barraca, Pedro Fonseca (Univeristy of Aveiro, PT)<br>
         Sandra Millán Arias, Cristina Montesinos Barrios (CICYTEX, ES)</p>
     </div>
     <div class="accent"></div>
 
-    <!-- Row 1 -->
     <div class="grid">
-        <div class="section" style="justify-content: space-between;">
+        <div class="section">
             <div class="overview-content">
                 <h2>Project Overview</h2>
                 <p>RAT EOS PC delivers a low-cost IoT platform that <strong>detects fire-risk conditions in real-time:</strong></p>
@@ -197,7 +215,7 @@
                     <li>Project website: <a href="https://www.rateospc.pt/" class="project-link">www.rateospc.pt</a></li>
                 </ul>
             </div>
-            <img src="logo.png" alt="Project Logo" class="logo" style="max-height: 140px; width: 140px; margin: 20px auto 0 auto; display: block;">
+            <img src="logo.png" alt="Project Logo" class="logo">
         </div>
         <div class="section">
             <h2>System Architecture</h2>
@@ -208,11 +226,10 @@
                 <li><strong>Elasticsearch + Kibana</strong> power dashboards & maps.</li>
                 <li><strong>N8N/ElastAlert</strong> push Slack / e-mail warnings & fire flags.</li>
             </ul>
-            <img src="arch-2.png" alt="System Architecture Diagram" class="arch-diagram" style="max-height: 450px;">
+            <img src="arch-2.png" alt="System Architecture Diagram" class="arch-diagram">
         </div>
     </div>
 
-    <!-- Row 2 -->
     <div class="grid">
         <div class="section">
             <h2>Alerting Workflow</h2>
@@ -221,15 +238,12 @@
                 <li>Alert context enriched (geo info, sensor model).</li>
                 <li>Stakeholders notified in Slack, e-mail & Kibana Dashboards</li>
             </ol>
-            <img src="alert.png" alt="Slack fire-alert screenshot" class="screenshot" style="max-height: 300px; margin-top: auto;">
+            <img src="alert.png" alt="Slack fire-alert screenshot" class="screenshot">
         </div>
         <div class="section">
             <h2>Performance Test Highlights</h2>
             <table class="perf-table">
-                <tr>
-                    <th>Metric</th>
-                    <th>Value</th>
-                </tr>
+                <tr><th>Metric</th><th>Value</th></tr>
                 <tr><td>Peak burst (messages/time)</td><td>7,196 msgs in 21s</td></tr>
                 <tr><td>Messages processed (24h)</td><td>273,391</td></tr>
                 <tr><td>Data Processing (Logstash)</td><td>317.6 events/second</td></tr>
@@ -239,19 +253,23 @@
         </div>
     </div>
 
-    <!-- Row 3 -->
     <div class="grid">
         <div class="section" style="grid-column: span 2;">
-            <h2>Contributions and Future Work</h2>
+            <h2>Contributions & Future Work</h2>
             <ul>
                 <li><strong>Scalable real-time wildfire monitoring</strong> for Mediterranean forests.</li>
                 <li>Entirely open-source and replicable in other regions.</li>
                 <li>Meets emergency-response latency standards.</li>
                 <li>Next Work: integrate satellite hotspots for multi-modal early warning.</li>
-                <li>Contact: marta.alex@ua.pt</li>
             </ul>
-            <img src="dashboard.png" alt="Kibana Dashboard Screenshot" class="screenshot" style="max-height: 280px; margin-top: 15px;">
+            <img src="dashboard.png" alt="Kibana Dashboard Screenshot" class="screenshot">
         </div>
+    </div>
+    
+    <div class="footer">
+        <p><strong>Contact:</strong> marta.alex@ua.pt</p>
+        <p><strong>University of Aveiro, IT</p>
+
     </div>
 </div>
 </body>
