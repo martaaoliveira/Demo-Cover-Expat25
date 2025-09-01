@@ -13,15 +13,11 @@
     }
     .poster {
         width: 210mm;
-        max-width: 97vw;
-        margin: 20px auto;
-        background: #fff;
-        display: flex;
-        flex-direction: column;
-        border-radius: 16px;
-        box-shadow: 0 10px 40px rgba(44, 95, 115, 0.15);
-        border: 1px solid #e0e5ea;
+        height: 297mm;
+        overflow: hidden; /* hides overflow in print */
+        box-sizing: border-box;
     }
+
     .header {
         background: #286991;
         color: #fff;
@@ -30,12 +26,14 @@
         border-radius: 14px 14px 0 0;
     }
     .header h1 {
+        color: #fff; /* force white text color */
         margin: 0;
         font-size: 34px;
         font-weight: 900;
         letter-spacing: -1.2px;
         text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     }
+
     .header p {
         margin: 8px 0 0 0;
         font-size: 15px;
@@ -87,15 +85,13 @@
         position: relative;
     }
     ul li::before {
-        content: '';
+        content: '✔'; /* Unicode checkmark */
         position: absolute;
         left: 0;
         top: 5px;
-        width: 18px;
-        height: 18px;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23286991'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
-        background-size: contain;
-        background-repeat: no-repeat;
+        color: #286991;
+        font-size: 18px;
+        line-height: 1;
     }
     ol {
         padding-left: 25px;
@@ -215,7 +211,6 @@
                     <li>Project website: <a href="https://www.rateospc.pt/" class="project-link">www.rateospc.pt</a></li>
                 </ul>
             </div>
-            <img src="logo.png" alt="Project Logo" class="logo">
         </div>
         <div class="section">
             <h2>System Architecture</h2>
@@ -226,51 +221,30 @@
                 <li><strong>Elasticsearch + Kibana</strong> power dashboards & maps.</li>
                 <li><strong>N8N/ElastAlert</strong> Calculates fire risk alerts</li>
             </ul>
-            <img src="arch-2.png" alt="System Architecture Diagram" class="arch-diagram">
         </div>
     </div>
 
-    <div class="grid">
-        <div class="section">
-            <h2>Alerting Workflow</h2>
-            <ol>
-                <li>Rules match in ElastAlert or N8N frameworks.</li>
-                <li>Alert context enriched (geo info, sensor model).</li>
-                <li>Stakeholders notified via Slack, e-mail & Kibana Dashboards</li>
-            </ol>
-            <img src="alert.png" alt="Slack fire-alert screenshot" class="screenshot">
-        </div>
-        <div class="section">
-            <h2>Performance Test Highlights</h2>
-            <table class="perf-table">
-                <tr><th>Metric</th><th>Value</th></tr>
-                <tr><td>Peak burst (messages/time)</td><td>7,196 msgs in 21s</td></tr>
-                <tr><td>Messages processed (24h)</td><td>273,391</td></tr>
-                <tr><td>Data Processing (Logstash)</td><td>317.6 events/second</td></tr>
-                <tr><td>Index Rate (ElasticSearch)</td><td>3,094 records/second</td></tr>
-                <tr><td>Alert processing (N8N)</td><td>within 100s</td></tr>
-            </table>
-        </div>
+<div class="grid">
+    <div class="section">
+        <h2>Alerting Workflow</h2>
+        <ol>
+            <li>Rules match in ElastAlert or N8N frameworks.</li>
+            <li>Alert context enriched (geo info, sensor model, fields measured).</li>
+            <li>Stakeholders notified via Slack, Teams, e-mail & Kibana Dashboards</li>
+        </ol>
     </div>
-
-    <div class="grid">
-        <div class="section" style="grid-column: span 2;">
-            <h2>Contributions & Future Work</h2>
-            <ul>
-                <li><strong>Scalable real-time wildfire monitoring</strong> for Mediterranean forests.</li>
-                <li>Entirely open-source and replicable in other regions.</li>
-                <li>Meets emergency-response latency standards.</li>
-                <li>Next Work: integrate satellite images for multi-modal early warning.</li>
-            </ul>
-            <img src="dashboard.png" alt="Kibana Dashboard Screenshot" class="screenshot">
-        </div>
-    </div>
-    
-    <div class="footer">
-        <p><strong>Contact:</strong> marta.alex@ua.pt</p>
-        <p><strong>University of Aveiro, IT</p>
-
+    <div class="section">
+        <h2>Contributions & Future Work</h2>
+        <ul>
+            <li><strong>Scalable real-time wildfire monitoring</strong> for Mediterranean forests.</li>
+            <li>Entirely open-source and replicable in other regions.</li>
+            <li>Next Work: Integration with satellite images for multi-modal early warning and machine learning algorithms for predictive analytics.</li>
+        </ul>
     </div>
 </div>
+    
+    <div class="footer">
+        <p><strong>Contact:</strong> marta.alex@ua.pt, University of Aveiro </p>
+    </div>
 </body>
 </html>
